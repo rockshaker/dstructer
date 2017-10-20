@@ -9,7 +9,3 @@ class Solution:
         if not s:
             return
         return s.replace(' ', '20%')
-        '''
-        words = s.split()
-        return '%20'.join(words)
-        '''
