@@ -7,3 +7,12 @@
 class Solution:
     def jumpFloorII(self, number):
         # write code here
+        '''
+        f(n) = f(n-1)+f(n-2)+f(n-3)+ .. + f(1)+1
+        1: 1=1
+        2: 2=2
+        3: 1+2+1=4
+        4: 1+2+1+2+1+1=8
+        5: 8+4+2+1+1=16
+        '''
+        return 2**(number-1)
