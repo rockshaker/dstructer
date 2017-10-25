@@ -49,5 +49,5 @@ class UnorderedList:
             else:
                 prev = current
                 current = current.next()
-        # FIX ME 
+        # FIXME: Not a complete situation
         prev.next(current.next())
