@@ -49,5 +49,8 @@ class UnorderedList:
             else:
                 prev = current
                 current = current.next()
-        # FIXME: Not a complete situation
-        prev.next(current.next())
+
+        if not prev:
+            self.head = current.next()
+        else:
+            prev.next(current.next())
