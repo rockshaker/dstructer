@@ -51,6 +51,15 @@ class UnorderedList:
         else:
             prev.set_next(current.get_next())
 
+    def list_print(self):
+        res = []
+        current = self.head
+        while current:
+            res.append(current.get_data())
+            current = current.get_next()
+
+        print res
+
 
 class OrderedList:
     def __init__(self):
