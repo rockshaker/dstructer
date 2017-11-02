@@ -1,3 +1,4 @@
+# -*- coding:utf-8 -*-
 from pythonds.list import UnorderedList
 
 
@@ -37,6 +38,25 @@ class MiddleNode:
         return p2
 
 
+class BackkNode:
+    """
+    Q:
+        输入一个单向链表，输出该链表中倒数第k个节点，链表的倒数第0个节点为链表的尾指针。
+    """
+    def resolve(self, head, k):
+        p1 = head
+        p2 = head
+
+        while k > 0:
+            p2 = p2.get_next()
+            k -= 1
+
+        while p2 is not None:
+            p1 = p1.get_next()
+            p2 = p2.get_next()
+        return p1
+
+
 if __name__ == "__main__":
     ul = UnorderedList()
     items = [1, 3, 2, 6, 5, 9]
@@ -48,3 +68,6 @@ if __name__ == "__main__":
     reversed_list_head = rs.solve(ul.head)
     print reversed_list_head.get_data()
     print reversed_list_head.get_next().get_data()
+
+    bkn = BackkNode()
+    print bkn.resolve(ul.head, 2).get_data()
