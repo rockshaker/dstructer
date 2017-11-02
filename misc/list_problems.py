@@ -1,10 +1,8 @@
-# -*- coding:utf-8 -*-
-# Q:
-# Reverse a linked list
 from pythonds.list import UnorderedList
 
 
 class ReverseList:
+    # Q: Reverse a linked list
     def solve(self, head):
         if head is None:
             return None
@@ -19,6 +17,24 @@ class ReverseList:
             current = temp
 
         return prev
+
+
+class MiddleNode:
+    # Q: Find the middle node of a linked list
+    def solve(self, head):
+        p1 = head
+        p2 = head
+        size = 0
+        while p1 is not None:
+            size += 1
+            p1 = p1.get_next()
+
+        step = size/2
+        while step > 0:
+            p2 = p2.get_next()
+            step -= 1
+
+        return p2
 
 
 if __name__ == "__main__":
