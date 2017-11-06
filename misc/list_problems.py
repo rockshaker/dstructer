@@ -37,6 +37,15 @@ class MiddleNode:
 
         return p2
 
+    def solve2(self, head):
+        p1 = head
+        p2 = head
+        while p2 is not None and p2.get_next() is not None:
+            p2 = p2.get_next().get_next()
+            p1 = p1.get_next()
+
+        return p1
+
 
 class BackkNode:
     """
@@ -55,6 +64,27 @@ class BackkNode:
             p1 = p1.get_next()
             p2 = p2.get_next()
         return p1
+
+
+class CicleLink:
+    """
+    Q：
+        输入一个单向链表，判断链表是否有环？
+    """
+    def has_circle(self, head):
+        fast = head
+        slow = head
+
+        while fast is not None and fast.get_next() is not None:
+            fast = fast.get_next().get_next()
+            slow = slow.get_next()
+
+            if fast == slow:
+                return True
+        return False
+
+    def circle(self, head):
+        pass
 
 
 if __name__ == "__main__":
